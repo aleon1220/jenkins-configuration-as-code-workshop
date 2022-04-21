@@ -1,4 +1,4 @@
-# Exercise A - Foundation
+# Exercise A - Foundation - Task B
 
 We will be working with these files in this exercise.
 
@@ -6,7 +6,7 @@ We will be working with these files in this exercise.
 - [jenkins/jenkins.yaml](jenkins/jenkins.yaml)
 - [jenkins/plugins.txt](jenkins/plugins.txt)
 
-## Task: Use Explicit Version of Jenkins
+## Task 1: Use Explicit Version of Jenkins
 
 It is recommended to explicitly use a specific version of Jenkins, even for Jenkins LTS versions. It improves traceability.
 
@@ -26,5 +26,4 @@ Hints:
 ```
 
 - Run `make`. See [Makefile](Makefile) for more information.
-
 - Open [http://localhost:8080](http://localhost:8080) to access Jenkins.

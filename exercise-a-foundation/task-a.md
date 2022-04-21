@@ -1,4 +1,4 @@
-# Exercise A - Foundation
+# Exercise A - Foundation - Task A
 
 We will be working with these files in this exercise.
 
@@ -6,21 +6,21 @@ We will be working with these files in this exercise.
 - [jenkins/jenkins.yaml](jenkins/jenkins.yaml)
 - [jenkins/plugins.txt](jenkins/plugins.txt)
 
-## Task: Use Jenkins Configuration as Code (JCasC) Plugin
+## Exercise A 3 Tasks
+
+### Task 1: Use Jenkins Configuration as Code (JCasC) Plugin
 
 It is important that we have included `configuration-as-code:1.35` in the configuration. Otherwise, Jenkins cannot process our Jenkins Configuration as Code's [jenkins/jenkins.yaml](jenkins/jenkins.yaml) file. Note that we have a predefined system message in [jenkins/jenkins.yaml](jenkins/jenkins.yaml) file.
 
-### Task: Exclude Jenkins Configuration as Code (JCasC) Plugin
+### Task 2: Add Jenkins Configuration as Code (JCasC) Plugin to the plugins list
 
 - The initial [jenkins/plugins.txt](jenkins/plugins.txt) file does not include that `configuration-as-code` line.
-
 - Run `make`. See [Makefile](Makefile) for more information.
-
 - Open [http://localhost:8080](http://localhost:8080) to access Jenkins.
 
 Was the configured system message, configured in [jenkins/jenkins.yaml](jenkins/jenkins.yaml) shown?
 
-### Task: Include Jenkins Configuration as Code (JCasC) Plugin
+### Task 3: Obtain latest version of a plugin
 
 - Query for the latest version of Jenkins Configuration as Code (JCasC) plugin.
 
@@ -30,8 +30,9 @@ $ curl \
     --silent \
     https://api.github.com/repos/jenkinsci/configuration-as-code-plugin/releases/latest \
     | jq --raw-output '.tag_name'
-configuration-as-code-1.43
-$
+
+Output [ configuration-as-code-1.43 ]
+
 $ curl \
     --show-error \
     --silent \
@@ -41,10 +42,11 @@ $ curl \
     | tr --delete '\"' \
     | tr --delete ',' \
     | sed -e 's/^[[:space:]]*//'
-configuration-as-code-1.43
+
+Output [ configuration-as-code-1.43 ]
 ```
 
-- Run `make` again __with__ `configuration-as-code:1.43` being included in [jenkins/plugins.txt](jenkins/plugins.txt).
+- Run `make` again __with__ plugin  `configuration-as-code:1.43` being included in [jenkins/plugins.txt](jenkins/plugins.txt).
 
 ```patch
 --- a/exercise-a-foundation/jenkins/plugins.txt
@@ -60,7 +62,6 @@ configuration-as-code-1.43
 ```
 
 - Run `make`. See [Makefile](Makefile) for more information.
-
 - Open [http://localhost:8080](http://localhost:8080) to access Jenkins.
 
 Was the configured system message, configured in [jenkins/jenkins.yaml](jenkins/jenkins.yaml) shown now?

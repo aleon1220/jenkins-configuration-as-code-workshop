@@ -1,4 +1,4 @@
-# Exercise A - Foundation
+# Exercise A - Foundation - Task C
 
 We will be working with these files in this exercise.
 
@@ -6,7 +6,9 @@ We will be working with these files in this exercise.
 - [jenkins/jenkins.yaml](jenkins/jenkins.yaml)
 - [jenkins/plugins.txt](jenkins/plugins.txt)
 
-## Task: Review Administrative Monitors (See Upper Right Square Numeric Red Box)
+## Tasks
+
+### Task 1: Review Administrative Monitors (See Upper Right Square Numeric Red Box)
 
 We notice that there are few active administrative monitors.
 
@@ -14,7 +16,7 @@ They are shown when we click on the red box on the upper right corner.
 
 How could we fix some of them by Jenkins Configuration as Code (JCasC)?
 
-### Task: Fix Jenkins Root URL
+### Task 2: Fix Jenkins Root URL
 
 ```text
 Jenkins root URL is empty but is required for the proper operation of many Jenkins features like email notifications, PR status update, and environment variables such as BUILD_URL.
@@ -50,7 +52,7 @@ Go to `Jenkins` > `Manage Jenkins` > [Configuration as Code](http://localhost:80
 
 Click `View Configuration` to verify the applied configuration.
 
-### Task: Set Up Security
+### Task 3: Set Up Security
 
 ```text
 Jenkins is currently unsecured and allows anyone on the network to launch processes on your behalf. It is recommended to set up security and to limit anonymous access even on private networks.
@@ -86,5 +88,4 @@ Go to `Jenkins` > `Manage Jenkins` > [Configuration as Code](http://localhost:80
 Click `View Configuration` to verify the applied configuration.
 
 - Run `make`. See [Makefile](Makefile) for more information.
-
 - Open [http://localhost:8080](http://localhost:8080) to access Jenkins.

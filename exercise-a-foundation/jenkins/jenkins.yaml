@@ -5,6 +5,18 @@ configuration-as-code:
 
 jenkins:
   systemMessage: |-
-    Welcome to Jenkins!    ٩(◕‿◕)۶
-    This Jenkins was configured with Jenkins Configuration as Code plugin.
-    You can freely modify its configuration without repercussion.
+    Welcome to Jenkins!  ٩(◕‿◕)۶
+    This Jenkins Instance was configured with the plugin Jenkins Configuration as Code
+    Freely modify its configuration without repercussion.
+  authorizationStrategy: "loggedInUsersCanDoAnything"
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+        - id: ${JENKINS_ADMINISTRATOR_USERNAME:-administrator}
+          password: ${JENKINS_ADMINISTRATOR_PASSWORD:-changeit}  
+unclassified:
+  location:
+    adminAddress: "Leonard Sheng Lee <leonard.sheng.sheng.lee@gmail.com>"
+    url: "http://127.0.0.1:8080"
